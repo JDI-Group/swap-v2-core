@@ -8,12 +8,12 @@ The following assumes the use of `node@>=10`.
 
 ## Install Dependencies
 
-`yarn`
+`npm install`
 
 ## Compile Contracts
 
-`yarn compile`
+`npx hardhat compile`
 
 ## Run Tests
 
-`yarn test`
+`npx hardhat test`
