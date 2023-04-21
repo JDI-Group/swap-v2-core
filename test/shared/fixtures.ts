@@ -19,7 +19,7 @@ interface CoreFixture {
 export async function coreFixture([wallet]: Wallet[], provider: providers.Web3Provider): Promise<CoreFixture> {
   const WannseeFactory = await artifacts.readArtifact('WannseeFactory')
   const WannseeRouter01 = await artifacts.readArtifact('WannseeRouter01')
-  const WannseeRouter02 = await artifacts.readArtifact('WannseeRouter02')
+  const WannseeRouter = await artifacts.readArtifact('WannseeRouter')
   const WannseePair = await artifacts.readArtifact('WannseePair')
   const RouterEventEmitter = await artifacts.readArtifact('RouterEventEmitter')
   const ERC20 = await artifacts.readArtifact('ERC20')
@@ -34,12 +34,7 @@ export async function coreFixture([wallet]: Wallet[], provider: providers.Web3Pr
   const factory = await deployContract(wallet, WannseeFactory, [wallet.address])
 
   // deploy routers
-  const router = await deployContract(
-    wallet,
-    WannseeRouter02,
-    [factory.address, WETH.address, wallet.address],
-    overrides
-  )
+  const router = await deployContract(wallet, WannseeRouter, [factory.address, WETH.address, wallet.address], overrides)
 
   // event emitter for testing
   const routerEventEmitter = await deployContract(wallet, RouterEventEmitter, [])
