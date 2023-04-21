@@ -44,13 +44,13 @@ describe('WannseeRouter', () => {
     expect(await router.quote(BigNumber.from(1), BigNumber.from(100), BigNumber.from(200))).to.eq(BigNumber.from(2))
     expect(await router.quote(BigNumber.from(2), BigNumber.from(200), BigNumber.from(100))).to.eq(BigNumber.from(1))
     await expect(router.quote(BigNumber.from(0), BigNumber.from(100), BigNumber.from(200))).to.be.revertedWith(
-      'HexaFinityLibrary: INSUFFICIENT_AMOUNT'
+      'WannseeLibrary: INSUFFICIENT_AMOUNT'
     )
     await expect(router.quote(BigNumber.from(1), BigNumber.from(0), BigNumber.from(200))).to.be.revertedWith(
-      'HexaFinityLibrary: INSUFFICIENT_LIQUIDITY'
+      'WannseeLibrary: INSUFFICIENT_LIQUIDITY'
     )
     await expect(router.quote(BigNumber.from(1), BigNumber.from(100), BigNumber.from(0))).to.be.revertedWith(
-      'HexaFinityLibrary: INSUFFICIENT_LIQUIDITY'
+      'WannseeLibrary: INSUFFICIENT_LIQUIDITY'
     )
   })
 
@@ -59,13 +59,13 @@ describe('WannseeRouter', () => {
       BigNumber.from(1)
     )
     await expect(router.getAmountOut(BigNumber.from(0), BigNumber.from(100), BigNumber.from(100))).to.be.revertedWith(
-      'HexaFinityLibrary: INSUFFICIENT_INPUT_AMOUNT'
+      'WannseeLibrary: INSUFFICIENT_INPUT_AMOUNT'
     )
     await expect(router.getAmountOut(BigNumber.from(2), BigNumber.from(0), BigNumber.from(100))).to.be.revertedWith(
-      'HexaFinityLibrary: INSUFFICIENT_LIQUIDITY'
+      'WannseeLibrary: INSUFFICIENT_LIQUIDITY'
     )
     await expect(router.getAmountOut(BigNumber.from(2), BigNumber.from(100), BigNumber.from(0))).to.be.revertedWith(
-      'HexaFinityLibrary: INSUFFICIENT_LIQUIDITY'
+      'WannseeLibrary: INSUFFICIENT_LIQUIDITY'
     )
   })
 
@@ -74,13 +74,13 @@ describe('WannseeRouter', () => {
       BigNumber.from(2)
     )
     await expect(router.getAmountIn(BigNumber.from(0), BigNumber.from(100), BigNumber.from(100))).to.be.revertedWith(
-      'HexaFinityLibrary: INSUFFICIENT_OUTPUT_AMOUNT'
+      'WannseeLibrary: INSUFFICIENT_OUTPUT_AMOUNT'
     )
     await expect(router.getAmountIn(BigNumber.from(1), BigNumber.from(0), BigNumber.from(100))).to.be.revertedWith(
-      'HexaFinityLibrary: INSUFFICIENT_LIQUIDITY'
+      'WannseeLibrary: INSUFFICIENT_LIQUIDITY'
     )
     await expect(router.getAmountIn(BigNumber.from(1), BigNumber.from(100), BigNumber.from(0))).to.be.revertedWith(
-      'HexaFinityLibrary: INSUFFICIENT_LIQUIDITY'
+      'WannseeLibrary: INSUFFICIENT_LIQUIDITY'
     )
   })
 
@@ -100,7 +100,7 @@ describe('WannseeRouter', () => {
     )
 
     await expect(router.getAmountsOut(BigNumber.from(2), [token0.address])).to.be.revertedWith(
-      'HexaFinityLibrary: INVALID_PATH'
+      'WannseeLibrary: INVALID_PATH'
     )
     const path = [token0.address, token1.address]
     expect(await router.getAmountsOut(BigNumber.from(2), path)).to.deep.eq([BigNumber.from(2), BigNumber.from(1)])
@@ -122,7 +122,7 @@ describe('WannseeRouter', () => {
     )
 
     await expect(router.getAmountsIn(BigNumber.from(1), [token0.address])).to.be.revertedWith(
-      'HexaFinityLibrary: INVALID_PATH'
+      'WannseeLibrary: INVALID_PATH'
     )
     const path = [token0.address, token1.address]
     expect(await router.getAmountsIn(BigNumber.from(1), path)).to.deep.eq([BigNumber.from(2), BigNumber.from(1)])
@@ -862,7 +862,7 @@ describe('WannseeRouter: fee-on-transfer tokens', () => {
   beforeEach(async function () {
     const fixture = await loadFixture(coreFixture)
     const DeflatingERC20 = await artifacts.readArtifact('DeflatingERC20')
-    const HexaFinityPair = await artifacts.readArtifact('HexaFinityPair')
+    const WannseePair = await artifacts.readArtifact('WannseePair')
 
     WETH = fixture.WETH
     router = fixture.router
@@ -872,7 +872,7 @@ describe('WannseeRouter: fee-on-transfer tokens', () => {
     // make a DTT<>WETH pair
     await fixture.factory.createPair(DTT.address, WETH.address)
     const pairAddress = await fixture.factory.getPair(DTT.address, WETH.address)
-    pair = new Contract(pairAddress, JSON.stringify(HexaFinityPair.abi), provider).connect(wallet)
+    pair = new Contract(pairAddress, JSON.stringify(WannseePair.abi), provider).connect(wallet)
   })
 
   afterEach(async function () {
