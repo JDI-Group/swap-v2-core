@@ -1,8 +1,8 @@
 import { ethers } from 'hardhat'
 
 async function main() {
-  const WannseeFactory = '0xCD9D4B62a0A7c900b2FF9e64B8BF2a6aB482FcCe'
-  const WETH = '0x0D59E765344700Af7Cb9cb66cE6c0A11ee113afA'
+  const WannseeFactory = '0x40392ea6cd095c5505B1EEAcd6Bf8066E19E77F0'
+  const WETH = '0xEEE5eD1d12B62eAe4513e28d66E4EA300005891A'
   const Router01 = await ethers.getContractFactory('WannseeRouter01')
   const router01 = await Router01.deploy(WannseeFactory, WETH)
 
