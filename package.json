@@ -21,6 +21,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ericxstone/hardhat-blockscout-verify": "^1.0.2",
     "dotenv": "^16.0.3",
     "ethereum-waffle": "^3.4.4",
     "ethereumjs-util": "^7.1.4",
