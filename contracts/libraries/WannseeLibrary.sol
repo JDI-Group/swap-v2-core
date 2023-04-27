@@ -22,7 +22,7 @@ library WannseeLibrary {
                 hex'ff',
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
-                hex'1601d5b84f4290638551643b309dfcb1852122a0ae9c881391f363a2c2b91522' // init code hash
+                hex'4c20c19023db7deace18fc3ecce0e2dad6ee5e019d9ad534dec68cf62eb3f41b' // init code hash
             ))));
     }
 

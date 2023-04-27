@@ -8,6 +8,8 @@ async function main() {
   await factory.deployed()
 
   console.log(`Wannsee factory deployed to ${factory.address}`)
+  const init_hash = await factory.INIT_CODE_PAIR_HASH()
+  console.log(`Init Hash:`, init_hash)
 }
 
 // We recommend this pattern to be able to use async/await everywhere
