@@ -1,6 +1,6 @@
 # Wannseeswap
 
-In-depth documentation on Wannseeswap is available at [mxc.org](https://mxc.org).
+create a new hardhat project and copy the the contracts in the contracts folder into your hardhat project's contract folder.
 
 # Local Development
 
@@ -13,7 +13,3 @@ The following assumes the use of `node@>=10`.
 ## Compile Contracts
 
 `npx hardhat compile`
-
-## Run Tests
-
-`npx hardhat test`
