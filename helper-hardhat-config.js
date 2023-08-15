@@ -5,8 +5,13 @@ const networkConfig = {
     default: {
         name: "hardhat",
     },
+    18686: {
+        name: "wannsee mainnet",
+        feeToSetter: "0x4faBD45F69D907aC3a3941c34f466A6EFf44bAcA",
+    },
     31337: {
         name: "localhost",
+        feeToSetter: "0x45A83F015D0265800CBC0dACe1c430E724D49cAc",
     },
     5: {
         name: "goerli",
@@ -20,7 +25,7 @@ const networkConfig = {
     },
     5167003: {
         name: "wannsee",
-        live: false,
+        live: true,
         timeout: 120000000,
         feeToSetter: "0x45A83F015D0265800CBC0dACe1c430E724D49cAc",
     },
