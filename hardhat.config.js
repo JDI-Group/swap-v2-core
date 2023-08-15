@@ -46,10 +46,18 @@ module.exports = {
             accounts: [PRIVATE_KEY2],
         },
         wannsee: {
-            url: "https://wannsee-rpc.mxc.com",
+            // url: "https://wannsee-rpc.mxc.com",
+            url: "http://207.246.99.8:8545",
             chainId: 5167003,
             accounts: [PRIVATE_KEY_ADMIN, PRIVATE_KEY1],
             // gasPrice: 6000000000000,
+            saveDeployments: true,
+        },
+        wannsee_mainnet: {
+            // url: "https://rpc.mxc.com",
+            url: "http://207.246.101.30:8545",
+            chainId: 18686,
+            accounts: [PRIVATE_KEY1],
             saveDeployments: true,
         },
         taiku: {

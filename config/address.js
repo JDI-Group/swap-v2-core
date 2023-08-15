@@ -1,21 +1,41 @@
 const { network, ethers, deployments } = require("hardhat")
 const chainId = network.config.chainId
 
-const getWmxc = async () => {
-    const [deployer] = await ethers.getSigners()
+const tokens = {
+    5167003: {
+        DHXToken: "0x8bC7cf83f5F83781Ec85B78d866222987Ae24657",
+        RIDEToken: "0x499A9b11b3A107e7ac45217C3401b3D0bF36A24C",
+        WMXCToken: "0x6807F4B0D75c59Ef89f0dbEF9841Fb23fFDF105D",
+    },
+}
 
-    let { address, abi } = await deployments.get("WMXC9")
+const abis = {
+    erc20: ["function decimals() external view returns (uint8)"],
+}
+
+const getERC20Contract = async (address) => {
+    // 根据当前网络名称获取网络配置
+    const networkConfig = hre.config.networks[network.name]
+    // 获取网络提供者的URL
+    const providerUrl = networkConfig.url
+    const provider = new ethers.providers.JsonRpcProvider(providerUrl)
+    return new ethers.Contract(address, abis.erc20, provider)
+}
+
+const getDeployment = async (contract) => {
+    const [deployer] = await ethers.getSigners()
+    let { address, abi } = await deployments.get(contract)
     return new ethers.Contract(address, abi, deployer)
 }
 
-const getUniswapV2Factory = async () => {
-    const [deployer] = await ethers.getSigners()
-
-    let { address, abi } = await deployments.get("UniswapV2Factory")
-    return new ethers.Contract(address, abi, deployer)
+const contractAttach = async (contractName, address) => {
+    const contract = await ethers.getContractFactory(contractName)
+    return await contract.attach(address)
 }
 
 module.exports = {
-    getWmxc,
-    getUniswapV2Factory,
+    getERC20Contract,
+    getDeployment,
+    contractAttach,
+    tokens: tokens[chainId],
 }

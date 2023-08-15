@@ -6,16 +6,17 @@ require("dotenv").config()
 module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy } = deployments
     const { deployer } = await getNamedAccounts()
-    const chainId = network.config.chainId
-    const feeToSetter = networkConfig[chainId]["feeToSetter"]
+    // const chainId = network.config.chainId
 
-    const UniswapV2Factory = await deploy("UniswapV2Factory", {
+    let factory = await deployments.get("UniswapV2Factory")
+
+    const WMXC = await deploy("WMXC9", {
         from: deployer,
-        args: [feeToSetter],
+        args: [],
         log: true,
     })
 
-    const Wmxc = await deploy("WMXC9", {
+    await deploy("Multicall", {
         from: deployer,
         args: [],
         log: true,
@@ -23,9 +24,9 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
     await deploy("UniswapV2Router02", {
         from: deployer,
-        args: [UniswapV2Factory.address, Wmxc.address],
+        args: [factory.address, WMXC.address],
         log: true,
     })
 }
 
-module.exports.tags = ["all", "v2"]
+module.exports.tags = ["all", "v2_swap"]
