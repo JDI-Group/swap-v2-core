@@ -3,6 +3,7 @@ require("@nomiclabs/hardhat-etherscan")
 require("dotenv").config()
 require("hardhat-deploy")
 require("@nomicfoundation/hardhat-chai-matchers")
+require("@openzeppelin/hardhat-upgrades")
 
 // require("hardhat-gas-reporter")
 // require("solidity-coverage")
@@ -50,8 +51,8 @@ module.exports = {
             url: "http://207.246.99.8:8545",
             chainId: 5167003,
             accounts: [PRIVATE_KEY_ADMIN, PRIVATE_KEY1],
-            // gasPrice: 6000000000000,
             saveDeployments: true,
+            gasPrice: 50 * 10000 * 1000000000,
         },
         wannsee_mainnet: {
             // url: "https://rpc.mxc.com",

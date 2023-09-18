@@ -6,8 +6,8 @@ require("dotenv").config()
 module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy } = deployments
     const { deployer } = await getNamedAccounts()
-    const chainId = network.config.chainId
-    const feeToSetter = networkConfig[chainId]["feeToSetter"]
+
+    const feeToSetter = networkConfig["feeToSetter"]
     console.log(`feeToSetter: ${feeToSetter}`)
 
     await deploy("UniswapV2Factory", {

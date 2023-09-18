@@ -1,5 +1,7 @@
 const developmentChains = ["hardhat", "localhost"]
-const { ethers } = require("hardhat")
+const { ethers, network } = require("hardhat")
+
+const chainId = network.config.chainId || 31337
 
 const networkConfig = {
     default: {
@@ -12,6 +14,8 @@ const networkConfig = {
     31337: {
         name: "localhost",
         feeToSetter: "0x45A83F015D0265800CBC0dACe1c430E724D49cAc",
+        XDGToken: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
+        DGToken: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
     },
     5: {
         name: "goerli",
@@ -28,6 +32,8 @@ const networkConfig = {
         live: true,
         timeout: 120000000,
         feeToSetter: "0x45A83F015D0265800CBC0dACe1c430E724D49cAc",
+        XDGToken: "0x28bcb9E425be00218D989AbCA55771C851C98feC",
+        DGToken: "0xdCc959e6e731b1CcA695a9e28D39103Bd0ecdb05",
     },
     167004: {
         name: "taiko",
@@ -38,6 +44,6 @@ const networkConfig = {
 }
 
 module.exports = {
-    networkConfig,
+    networkConfig: networkConfig[chainId],
     developmentChains,
 }
