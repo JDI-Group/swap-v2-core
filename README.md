@@ -1,27 +1,3 @@
---network wannsee
---network taiku
---network sepolia
-
-hh run scripts/xxx.js --network wannsee
-hh run scripts/xxxx.js
-hh run scripts/index.js --network wannsee
-hh run scripts/xdg.js --network wannsee
-hh run scripts/xdg.js --network localhost
-
-test
-hh test test/unit/xxx.test.js
-
-deploy
-hh deploy --tags v2_factory --network wannsee_mainnet
-hh deploy --tags v2_factory --network ganache
-hh deploy --tags v2_factory --network wannsee
-hh deploy --tags token --network localhost
-hh deploy --tags token --network wannsee
-hh deploy --tags token --network wannsee_mainnet
-
-hh console --network wannsee
-await network.provider.send("eth_blockNumber", [])
-
 [flow]
 部署工厂合约
 hh deploy --tags v2_factory --network wannsee

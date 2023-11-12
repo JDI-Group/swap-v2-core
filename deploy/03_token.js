@@ -8,10 +8,10 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deployer } = await getNamedAccounts()
     const chainId = network.config.chainId
 
-    // await deploy("Dogo", {
+    // await deploy("Digi", {
     //     contract: "ERC20FixedSupply",
     //     from: deployer,
-    //     args: ["Dogo", "Dogo", 1000000000],
+    //     args: ["Digi", "DG", 1000000000],
     //     log: true,
     // })
     // await deploy("Uni", {
@@ -27,10 +27,10 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     //     log: true,
     // })
 
-    const UpgradeTokenContract = await ethers.getContractFactory("XDGToken")
+    const UpgradeTokenContract = await ethers.getContractFactory("XDGTokenV2")
     const XDGToken = await upgrades.deployProxy(
         UpgradeTokenContract,
-        [deployer, 100000000000000],
+        [deployer, 100000000],
         {
             initializer: "initialize",
             kind: "uups",

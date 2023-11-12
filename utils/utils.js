@@ -1,5 +1,16 @@
 const { ethers } = require("hardhat")
 
+const getDeployment = async (contract) => {
+    const [deployer] = await ethers.getSigners()
+    let { address, abi } = await deployments.get(contract)
+    return new ethers.Contract(address, abi, deployer)
+}
+
+const contractAttach = async (contractName, address) => {
+    const contract = await ethers.getContractFactory(contractName)
+    return await contract.attach(address)
+}
+
 const getBlockTime = async () => {
     let blockNumBefore = await ethers.provider.getBlockNumber()
     let blockBefore = await ethers.provider.getBlock(blockNumBefore)
@@ -36,4 +47,6 @@ module.exports = {
     increaseTime,
     getSignature,
     deployContracts,
+    contractAttach,
+    getDeployment,
 }

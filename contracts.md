@@ -17,10 +17,14 @@ XDGToken address
 
 [wannsee-mainnet]
 feeToSetter:
-deploying "UniswapV2Factory" (tx: 0xae530536c40976636696d1350ced0340b9d5f0eec96b3b3b44fdcf396b8ed02e)...: deployed at 0x8bC7cf83f5F83781Ec85B78d866222987Ae24657 with 3097578 gas
-deploying "WMXC9" (tx: 0x994a7ea351c1288c4d2ccfcc3de3006b35f9363f86ae5bbcbdad451e53d7580b)...: deployed at 0xcBCE60BAD702026d6385E5f449e44099A655d14f with 945485 gas
-deploying "Multicall" (tx: 0xb0f6728a948684cb432a9245790608ecbc792935f18845468bd86a69cd401345)...: deployed at 0xbf5c081C000a02c07BC9a6141a7bfC6E85259946 with 643179 gas
-deploying "UniswapV2Router02" (tx: 0xb136c93ef08ff053c222013df3e8a9d46139c956b1bd96f74423ab5c718484b3)...: deployed at 0x757e5af94fC9b3d4035C2e6Cb1fD304F43c0A1A4 with 4757717 gas
+deploying "UniswapV2Factory" (tx: 0xae530536c40976636696d1350ced0340b9d5f0eec96b3b3b44fdcf396b8ed02e)...:
+deployed at 0x8bC7cf83f5F83781Ec85B78d866222987Ae24657 with 3097578 gas
+deploying "WMXC9" (tx: 0x994a7ea351c1288c4d2ccfcc3de3006b35f9363f86ae5bbcbdad451e53d7580b)...:
+deployed at 0xcBCE60BAD702026d6385E5f449e44099A655d14f with 945485 gas
+deploying "Multicall" (tx: 0xb0f6728a948684cb432a9245790608ecbc792935f18845468bd86a69cd401345)...:
+deployed at 0xbf5c081C000a02c07BC9a6141a7bfC6E85259946 with 643179 gas
+deploying "UniswapV2Router02" (tx: 0xb136c93ef08ff053c222013df3e8a9d46139c956b1bd96f74423ab5c718484b3)...:
+deployed at 0x757e5af94fC9b3d4035C2e6Cb1fD304F43c0A1A4 with 4757717 gas
 
 Factory - 0x8bC7cf83f5F83781Ec85B78d866222987Ae24657
 MultCall - 0xbf5c081C000a02c07BC9a6141a7bfC6E85259946
@@ -28,6 +32,8 @@ WMXC - 0xcBCE60BAD702026d6385E5f449e44099A655d14f
 Router - 0x757e5af94fC9b3d4035C2e6Cb1fD304F43c0A1A4
 Init_hash - 0x68b0ab55ef20390334a1b36dd4104c1862efe02f05ce932e9180a091500c678a
 feeSetter - 0x4faBD45F69D907aC3a3941c34f466A6EFf44bAcA
+
+XDGToken address: 0x6c1664332EFdAd3517cDfBA99c0435098428c4bA
 
 [ganache]
 Factory - 0x6FA34D533Ed090ED1Bb76f4ed9FBB201D51Dc25D
@@ -43,7 +49,8 @@ deploying "UniswapV2Factory" (tx: 0x7d478199002d9607514e91b037994528b220a2b16cc2
 deploying "WMXC9" (tx: 0x0607e7365aa9f4fdc78ddcee32339f4721a7bd84db1a3fce4bcf437feef0a653)...: deployed at 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 with 945183 gas
 deploying "Multicall" (tx: 0xe2309b1c121cf55b48f2bff3caac0ac4aa71a61dfd723e368e42c057080ae82c)...: deployed at 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0 with 643005 gas
 deploying "UniswapV2Router02" (tx: 0x5cbcfc488abf73bc06179996fa500c5661ad7bcebcb3170daa2df27cd0d0b8f1)...: deployed at 0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9 with 4756317 gas
-deploying "Dogo" (tx: 0x5a07746f8903b2ced402a82ea39b23271892489515365c9daa28c0e377af352a)...: deployed at 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 with 1527950 gas
+deploying "Digi" (tx: 0x111bfe90966bbe06fdbc158b44b89c13889ada49279e65a8cb81327e0cae8e56)...: deployed at 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 with 1527926 gas
 deploying "Uni" (tx: 0xa3f6d729289e088aa6f5632499e5d0945e018ef65965424dcb5339617f4da6f6)...: deployed at 0x5FC8d32690cc91D4c39d9d3abcBD16989F875707 with 1527926 gas
 deploying "bitcoin" (tx: 0x73c10c02f347639aee7df1757493bf1a071fe1ab159b542c82f186aa0014cbe2)...: deployed at 0x0165878A594ca255338adfa4d48449f69242Eb8F with 1527974 gas
 XDGToken address: 0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6
+Started HTTP and WebSocket JSON-RPC server at http://127.0.0.1:8545/

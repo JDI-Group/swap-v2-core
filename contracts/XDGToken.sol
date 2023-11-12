@@ -66,3 +66,63 @@ contract XDGToken is Initializable, ERC20Upgradeable, UUPSUpgradeable {
         }
     }
 }
+
+contract XDGTokenV2 is Initializable, ERC20Upgradeable, UUPSUpgradeable {
+    address public owner;
+    address public xdgPair;
+    // 测试网升级保留 主网要注释重新部署
+    // mapping(address => uint256) public liquidityShare;
+
+    event LiquidityShare(address provider, uint256 amount);
+
+    modifier onlyOwner() {
+        require(owner == _msgSender(), "Not authorized");
+        _;
+    }
+
+    /// @custom:oz-upgrades-unsafe-allow constructor
+    constructor() initializer {}
+
+    function initialize(
+        address _initialOwner,
+        uint256 totalSupply
+    ) public initializer {
+        __ERC20_init("XDGToken", "XDG");
+        __UUPSUpgradeable_init();
+
+        owner = _initialOwner;
+        _mint(msg.sender, totalSupply * 10 ** 18);
+    }
+
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
+    }
+
+    function transferAdminship(address newAdmin) external onlyOwner {
+        owner = newAdmin;
+    }
+
+    function setXdgPair(address _sdgPair) external onlyOwner {
+        xdgPair = _sdgPair;
+    }
+
+    function _authorizeUpgrade(
+        address newImplementation
+    ) internal override onlyOwner {}
+
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 amount
+    ) internal override {
+        super._beforeTokenTransfer(from, to, amount);
+
+        if (to == xdgPair && xdgPair != address(0)) {
+            emit LiquidityShare(from, amount);
+        }
+
+        if (from == xdgPair && xdgPair != address(0)) {
+            emit LiquidityShare(to, amount);
+        }
+    }
+}

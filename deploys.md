@@ -1,0 +1,4 @@
+XDGToken address:
+0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6
+
+deploying "BatchTransfer" (tx: 0xd1c7ad83827f1ad8471b4e900345c3a5d9c70eb2cdc5a858d765eaca49157852)...: deployed at 0x8926c3D9ab237d7ef822A02Ea8505B3021ae16e2 with 1078001 gas

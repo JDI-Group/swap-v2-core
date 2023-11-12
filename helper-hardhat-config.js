@@ -10,6 +10,10 @@ const networkConfig = {
     18686: {
         name: "wannsee mainnet",
         feeToSetter: "0x4faBD45F69D907aC3a3941c34f466A6EFf44bAcA",
+        XDGToken: "0x6c1664332EFdAd3517cDfBA99c0435098428c4bA",
+        DGToken: "0x77E5a8bE0bb40212458A18dEC1A9752B04Cb6EA1",
+
+        batchTransfer: "0x8926c3D9ab237d7ef822A02Ea8505B3021ae16e2",
     },
     31337: {
         name: "localhost",

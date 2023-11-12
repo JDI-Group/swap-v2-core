@@ -11,11 +11,12 @@ require("@openzeppelin/hardhat-upgrades")
 // require("@nomicfoundation/hardhat-toolbox")
 // require("@openzeppelin/hardhat-upgrades")
 
-const PRIVATE_KEY_ADMIN = process.env.PRIVATE_KEY_ADMIN
+const MXC_ADMIN = process.env.MXC_ADMIN
 const PRIVATE_KEY1 = process.env.PRIVATE_KEY1
 const PRIVATE_KEY2 = process.env.PRIVATE_KEY2
 const PRIVATE_KEY3 = process.env.PRIVATE_KEY3
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 
 module.exports = {
     defaultNetwork: "hardhat",
@@ -50,9 +51,9 @@ module.exports = {
             // url: "https://wannsee-rpc.mxc.com",
             url: "http://207.246.99.8:8545",
             chainId: 5167003,
-            accounts: [PRIVATE_KEY_ADMIN, PRIVATE_KEY1],
+            accounts: [MXC_ADMIN, PRIVATE_KEY2, PRIVATE_KEY1],
             saveDeployments: true,
-            gasPrice: 50 * 10000 * 1000000000,
+            gasPrice: 60 * 10000 * 1000000000,
         },
         wannsee_mainnet: {
             // url: "https://rpc.mxc.com",
@@ -60,6 +61,7 @@ module.exports = {
             chainId: 18686,
             accounts: [PRIVATE_KEY1],
             saveDeployments: true,
+            gasPrice: 40 * 10000 * 1000000000,
         },
         taiku: {
             url: "https://rpc.a2.taiko.xyz",
@@ -118,6 +120,21 @@ module.exports = {
                         enabled: true,
                         runs: 99999,
                     },
+                },
+            },
+        ],
+    },
+    etherscan: {
+        apiKey: {
+            wannsee_mainnet: ETHERSCAN_API_KEY,
+        },
+        customChains: [
+            {
+                network: "wannsee_mainnet",
+                chainId: 18686,
+                urls: {
+                    apiURL: "https://explorer-v1.mxc.com/api", // https => http
+                    browserURL: "https://explorer.mxc.com/",
                 },
             },
         ],

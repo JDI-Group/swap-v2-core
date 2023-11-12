@@ -15,9 +15,10 @@ const chainId = network.config.chainId
 
 async function main() {
     let pairAddress = await getPairAddress()
+    // console.log(pairAddress)
     // const [deployer] = await ethers.getSigners()
 
-    const XDGTokenContract = await ethers.getContractFactory("XDGToken")
+    const XDGTokenContract = await ethers.getContractFactory("XDGTokenV2")
     const XDGToken = XDGTokenContract.attach(networkConfig.XDGToken)
     // let owner = await XDGToken.owner()
 
@@ -28,22 +29,24 @@ async function main() {
     // setPair
     // await XDGToken.setXdgPair(pairAddress)
 
-    // let xdgPair = await XDGToken.xdgPair()
-    // console.log(xdgPair)
+    let xdgPair = await XDGToken.xdgPair()
+    console.log(xdgPair)
 
-    await XDGToken.mint(
-        // "0xe4f8dd6d10aa852a14a30890836704d66e3177cd",
-        // "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-        "0xa8eF099f636AFe4210de699f546A37326820aaF7",
-        parseEther("100000000000000")
-    )
-    // console.log(owner)
+    // await XDGToken.mint(
+    //     // "0xe4f8dd6d10aa852a14a30890836704d66e3177cd",
+    //     // "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    //     // "0xa8eF099f636AFe4210de699f546A37326820aaF7",
+    //     // "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    //     "0xcBF0b44aDfEdaaFACb784534Aa8D2f2AAdd9E592",
+    //     parseEther("100000000")
+    // )
 
     // let amount = await XDGToken.balanceOf(
-    //     "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+    //     "0xa8eF099f636AFe4210de699f546A37326820aaF7"
     // )
+    // // console.log(formatEther(amount))
     // await XDGToken.transfer(
-    //     "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    //     "0xf72AD2372315098d70E6D1bd760519e615251fab",
     //     amount
     // )
 }
