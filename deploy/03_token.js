@@ -27,16 +27,17 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     //     log: true,
     // })
 
-    const UpgradeTokenContract = await ethers.getContractFactory("XDGTokenV2")
-    const XDGToken = await upgrades.deployProxy(
-        UpgradeTokenContract,
-        [deployer, 100000000],
-        {
-            initializer: "initialize",
-            kind: "uups",
-        }
-    )
-    console.log("XDGToken address:", XDGToken.address)
+    // const UpgradeTokenContract = await ethers.getContractFactory("XDGTokenV2")
+    // const XDGToken = await upgrades.deployProxy(
+    //     UpgradeTokenContract,
+    //     [deployer, 100000000],
+    //     {
+    //         initializer: "initialize",
+    //         kind: "uups",
+    //     }
+    // )
+    // 0x3453c56D41A18147dcb4a92b0B08210F90740a87 geneva testnet
+    // console.log("XDGToken address:", XDGToken.address)
 }
 
 module.exports.tags = ["all", "token"]

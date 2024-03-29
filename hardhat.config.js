@@ -55,6 +55,12 @@ module.exports = {
             saveDeployments: true,
             gasPrice: 60 * 10000 * 1000000000,
         },
+        geneva: {
+            url: "https://geneva-rpc.moonchain.com",
+            chainId: 5167004,
+            accounts: [MXC_ADMIN, PRIVATE_KEY2, PRIVATE_KEY1],
+            saveDeployments: true,
+        },
         wannsee_mainnet: {
             // url: "https://rpc.mxc.com",
             url: "http://207.246.101.30:8545",
