@@ -31,13 +31,11 @@ const networkConfig = {
     421613: {
         name: "arbiture_goerli",
     },
-    5167003: {
-        name: "wannsee",
+    5167004: {
+        name: "geneva",
         live: true,
         timeout: 120000000,
-        feeToSetter: "0x45A83F015D0265800CBC0dACe1c430E724D49cAc",
-        XDGToken: "0x28bcb9E425be00218D989AbCA55771C851C98feC",
-        DGToken: "0xdCc959e6e731b1CcA695a9e28D39103Bd0ecdb05",
+        feeToSetter: "0x45A83F015D0265800CBC0dACe1c430E724D49cAc"
     },
     167004: {
         name: "taiko",
