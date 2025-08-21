@@ -15,7 +15,6 @@ const MXC_ADMIN = process.env.MXC_ADMIN
 const PRIVATE_KEY1 = process.env.PRIVATE_KEY1
 const PRIVATE_KEY2 = process.env.PRIVATE_KEY2
 const PRIVATE_KEY3 = process.env.PRIVATE_KEY3
-const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 
 module.exports = {
@@ -61,6 +60,12 @@ module.exports = {
             accounts: [MXC_ADMIN, PRIVATE_KEY2, PRIVATE_KEY1],
             saveDeployments: true,
         },
+        moonchain_hudson: {
+            url: 'https://hudson-rpc.mchain.ai',
+            chainId: 177888,
+            accounts: [PRIVATE_KEY1],
+            saveDeployments: true,
+        },
         wannsee_mainnet: {
             // url: "https://rpc.mxc.com",
             url: "http://207.246.101.30:8545",
@@ -74,12 +79,6 @@ module.exports = {
             chainId: 167004,
             accounts: [PRIVATE_KEY1, PRIVATE_KEY2, PRIVATE_KEY3],
             gasPrice: 250000000000,
-        },
-        sepolia: {
-            url: SEPOLIA_RPC_URL,
-            accounts: [PRIVATE_KEY1],
-            chainId: 11155111,
-            blockConfirmations: 6,
         },
     },
     solidity: {

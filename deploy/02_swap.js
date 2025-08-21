@@ -10,7 +10,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
     let factory = await deployments.get("UniswapV2Factory")
 
-    const WMXC = await deploy("WMXC9", {
+    const WMCH = await deploy("WMCH9", {
         from: deployer,
         args: [],
         log: true,
@@ -24,7 +24,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
     await deploy("UniswapV2Router02", {
         from: deployer,
-        args: [factory.address, WMXC.address],
+        args: [factory.address, WMCH.address],
         log: true,
     })
 }

@@ -37,6 +37,10 @@ const networkConfig = {
         timeout: 120000000,
         feeToSetter: "0x45A83F015D0265800CBC0dACe1c430E724D49cAc"
     },
+    177888: {
+        name: 'Moonchain Hudson',
+        feeToSetter: "0x45A83F015D0265800CBC0dACe1c430E724D49cAc"
+    },
     167004: {
         name: "taiko",
     },

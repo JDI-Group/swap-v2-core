@@ -19,7 +19,7 @@ XDGToken address
 feeToSetter:
 deploying "UniswapV2Factory" (tx: 0xae530536c40976636696d1350ced0340b9d5f0eec96b3b3b44fdcf396b8ed02e)...:
 deployed at 0x8bC7cf83f5F83781Ec85B78d866222987Ae24657 with 3097578 gas
-deploying "WMXC9" (tx: 0x994a7ea351c1288c4d2ccfcc3de3006b35f9363f86ae5bbcbdad451e53d7580b)...:
+deploying "WCH9" (tx: 0x994a7ea351c1288c4d2ccfcc3de3006b35f9363f86ae5bbcbdad451e53d7580b)...:
 deployed at 0xcBCE60BAD702026d6385E5f449e44099A655d14f with 945485 gas
 deploying "Multicall" (tx: 0xb0f6728a948684cb432a9245790608ecbc792935f18845468bd86a69cd401345)...:
 deployed at 0xbf5c081C000a02c07BC9a6141a7bfC6E85259946 with 643179 gas
@@ -46,7 +46,7 @@ feeSetter - 0x299e234b723fa4616aFbe68A1f149D69FDd82345
 [hardhat]
 feeToSetter: 0x45A83F015D0265800CBC0dACe1c430E724D49cAc
 deploying "UniswapV2Factory" (tx: 0x7d478199002d9607514e91b037994528b220a2b16cc2245bfed699801c5bb573)...: deployed at 0x5FbDB2315678afecb367f032d93F642f64180aa3 with 3096690 gas
-deploying "WMXC9" (tx: 0x0607e7365aa9f4fdc78ddcee32339f4721a7bd84db1a3fce4bcf437feef0a653)...: deployed at 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 with 945183 gas
+deploying "WCH9" (tx: 0x0607e7365aa9f4fdc78ddcee32339f4721a7bd84db1a3fce4bcf437feef0a653)...: deployed at 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 with 945183 gas
 deploying "Multicall" (tx: 0xe2309b1c121cf55b48f2bff3caac0ac4aa71a61dfd723e368e42c057080ae82c)...: deployed at 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0 with 643005 gas
 deploying "UniswapV2Router02" (tx: 0x5cbcfc488abf73bc06179996fa500c5661ad7bcebcb3170daa2df27cd0d0b8f1)...: deployed at 0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9 with 4756317 gas
 deploying "Digi" (tx: 0x111bfe90966bbe06fdbc158b44b89c13889ada49279e65a8cb81327e0cae8e56)...: deployed at 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 with 1527926 gas

@@ -8,7 +8,7 @@ hh run scripts/setBatchTransfer.js --network wannsee_mainnet
 hh run scripts/index.js --network wannsee
 hh run scripts/xdg.js --network wannsee
 hh run scripts/upgrade.js --network wannsee
-hh run scripts/wmxc.js --network wannsee
+hh run scripts/wmch.js --network wannsee
 hh run scripts/account.js --network wannsee
 */
 
@@ -24,6 +24,8 @@ hh deploy --tags BatchTransfer --network wannsee_mainnet
 hh deploy --tags v2_factory --network wannsee_mainnet
 hh deploy --tags v2_factory --network ganache
 hh deploy --tags v2_factory --network wannsee
+hh deploy --tags v2_factory --network moonchain_hudson
+hh deploy --tags 02_swap --network moonchain_hudson
 hh deploy --tags token --network localhost
 hh deploy --tags token --network wannsee
 hh deploy --tags token --network wannsee_mainnet
