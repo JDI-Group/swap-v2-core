@@ -12,6 +12,9 @@ const tokens = {
         WMXCToken: "0xcBCE60BAD702026d6385E5f449e44099A655d14f",
         XDGToken: "0x6c1664332EFdAd3517cDfBA99c0435098428c4bA",
     },
+    177888: {
+        WMXCToken: "0x12F3b69C248609BAc6ABD24067bec75F540a098d",
+    }
 }
 
 const abis = {
