@@ -39,7 +39,7 @@ const networkConfig = {
     },
     177888: {
         name: 'Moonchain Hudson',
-        feeToSetter: "0x45A83F015D0265800CBC0dACe1c430E724D49cAc"
+        feeToSetter: "0x8FD447ec8D70475544674e9dE98632f5BD715725"
     },
     167004: {
         name: "taiko",
