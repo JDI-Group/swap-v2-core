@@ -26,6 +26,7 @@ hh deploy --tags v2_factory --network ganache
 hh deploy --tags v2_factory --network wannsee
 hh deploy --tags v2_factory --network moonchain_hudson
 hh deploy --tags 02_swap --network moonchain_hudson
+hardhat deploy --tags 02_swap_redeploy --network moonchain_hudson
 hh deploy --tags token --network localhost
 hh deploy --tags token --network wannsee
 hh deploy --tags token --network wannsee_mainnet

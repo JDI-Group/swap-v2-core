@@ -18,4 +18,4 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     })
 }
 
-module.exports.tags = ["all", "v2_swap"]
+module.exports.tags = ["all", "02_swap_redeploy"]
