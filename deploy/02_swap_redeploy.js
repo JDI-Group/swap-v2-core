@@ -13,7 +13,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
     await deploy("UniswapV2Router02", {
         from: deployer,
-        args: ['0xC00fD690db86Ed98823381e4739Ef6Dd764B825c', '0x12F3b69C248609BAc6ABD24067bec75F540a098d'],
+        args: ['0x72208C18A7a04B0E6A5f40898Cc460b94AA5e2a2', '0x1C5b8F35933d4C9BD0B49ca0b4F91475E1a6501b'],
         log: true,
     })
 }
