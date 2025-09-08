@@ -10,12 +10,24 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
     let factory = await deployments.get("UniswapV2Factory")
 
+    const WMCH = await deploy("WMCH9", {
+        from: deployer,
+        args: [],
+        log: true,
+    })
+
+    await deploy("Multicall", {
+        from: deployer,
+        args: [],
+        log: true,
+    })
 
     await deploy("UniswapV2Router02", {
         from: deployer,
-        args: ['0xC00fD690db86Ed98823381e4739Ef6Dd764B825c', '0x12F3b69C248609BAc6ABD24067bec75F540a098d'],
+        args: [factory.address, WMCH.address],
         log: true,
     })
+
 }
 
 module.exports.tags = ["all", "v2_swap"]

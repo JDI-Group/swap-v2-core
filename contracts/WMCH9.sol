@@ -2,7 +2,7 @@
 pragma solidity ^0.8.17;
 
 contract WMCH9 {
-    string public name = "Wrapped Mch";
+    string public name = "Wrapped MCH";
     string public symbol = "WMCH";
     uint8 public decimals = 18;
 
