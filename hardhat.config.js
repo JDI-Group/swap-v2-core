@@ -66,6 +66,12 @@ module.exports = {
             accounts: [PRIVATE_KEY1],
             saveDeployments: true,
         },
+        moonchain_mainnet: {
+            url: "https://rpc.mchain.ai",
+            chainId: 999888,
+            accounts: [PRIVATE_KEY1],
+            saveDeployments: true,
+        },
         wannsee_mainnet: {
             // url: "https://rpc.mxc.com",
             url: "http://207.246.101.30:8545",
